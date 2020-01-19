@@ -25,9 +25,6 @@ namespace Testing2Identiy.Areas.Identity.Services
             password = "nikhil1212";
         }
        
-
-     
-
         public Task SendEmailAsync(string email,string subject,string message)
         {
 
