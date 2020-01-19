@@ -39,7 +39,7 @@ namespace Testing2Identiy
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<IdentityUser>(config=>config.SignIn.RequireConfirmedEmail=true)
                 .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
             services.Configure<EmailSender>(Configuration.GetSection("emailSender"));
             services.AddSingleton<IEmailSender, EmailSender>();

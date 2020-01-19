@@ -13,18 +13,11 @@ namespace Testing2Identiy.Controllers
     public class HomeController : Controller
     {
         private IConfiguration configuration;
-
-        public HomeController(IConfiguration iconfig)
-        {
-            configuration = iconfig;
-
-        }
-        
+              
         public IActionResult Index()
         {
            
-            EmailSender emailSender = new EmailSender() ;
-            emailSender.SendEmailAsync("nikhilgondaliya31804@gmail.com", "Testing", "Hello");
+              
             return View();
             
         }
